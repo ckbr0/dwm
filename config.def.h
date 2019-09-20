@@ -61,8 +61,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 
 // Added commands
-static const char *shutdowncmd[] = { "prompt.sh", "Are you sure you want to shutdown?", "sudo -A shutdown -h now", NULL };
-static const char *rebootcmd[] = { "prompt.sh", "Are you sure you want to reboot?", "sudo -A reboot", NULL };
+static const char *shutdowncmd[] = { "prompt", "Are you sure you want to shutdown?", dmenufont,"sudo -A shutdown -h now", NULL };
+static const char *rebootcmd[] = { "prompt", "Are you sure you want to reboot?", dmenufont, "sudo -A reboot", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
