@@ -69,7 +69,7 @@ static const char *termcmd[]  = { "st", NULL };
 // Added commands
 static const char *shutdowncmd[] = { "prompt", "Are you sure you want to shutdown?", dmenufont,"sudo -A shutdown -h now", NULL };
 static const char *rebootcmd[] = { "prompt", "Are you sure you want to reboot?", dmenufont, "sudo -A reboot", NULL };
-static const char *takescreenshot[] = { "scrot", "-u", NULL };
+static const char *takescreenshot[] = { "scrot", "-e", "mv $f ~/slike/posnetki/", NULL };
 static const char *upvol[]   = { "volume", "-i", NULL };
 static const char *downvol[] = { "volume", "-d", NULL };
 static const char *mutevol[] = { "volume", "-t", NULL };
