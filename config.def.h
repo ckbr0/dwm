@@ -69,6 +69,7 @@ static const char *termcmd[]  = { "st", NULL };
 // Added commands
 static const char *shutdowncmd[] = { "prompt", "Are you sure you want to shutdown?", dmenufont,"sudo -A shutdown -h now", NULL };
 static const char *rebootcmd[] = { "prompt", "Are you sure you want to reboot?", dmenufont, "sudo -A reboot", NULL };
+static const char *suspendcmd[] = { "prompt", "Are you sure you want to suspend?", dmenufont, "suspend", NULL };
 static const char *takescreenshotcmd[] = { "scrot", "-e", "mv $f ~/slike/posnetki/", NULL };
 static const char *upvolcmd[]   = { "volume", "-i", NULL };
 static const char *downvolcmd[] = { "volume", "-d", NULL };
@@ -115,6 +116,8 @@ static Key keys[] = {
 	// Added keybinds
 	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = shutdowncmd } },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = rebootcmd } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = suspendcmd } },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_Print,  spawn,          {.v = takescreenshotcmd } },
 	{ 0,             XF86XK_AudioLowerVolume,  spawn,          {.v = downvolcmd } },
