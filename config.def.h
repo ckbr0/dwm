@@ -69,10 +69,11 @@ static const char *termcmd[]  = { "st", NULL };
 // Added commands
 static const char *shutdowncmd[] = { "prompt", "Are you sure you want to shutdown?", dmenufont,"sudo -A shutdown -h now", NULL };
 static const char *rebootcmd[] = { "prompt", "Are you sure you want to reboot?", dmenufont, "sudo -A reboot", NULL };
-static const char *takescreenshot[] = { "scrot", "-e", "mv $f ~/slike/posnetki/", NULL };
-static const char *upvol[]   = { "volume", "-i", NULL };
-static const char *downvol[] = { "volume", "-d", NULL };
-static const char *mutevol[] = { "volume", "-t", NULL };
+static const char *takescreenshotcmd[] = { "scrot", "-e", "mv $f ~/slike/posnetki/", NULL };
+static const char *upvolcmd[]   = { "volume", "-i", NULL };
+static const char *downvolcmd[] = { "volume", "-d", NULL };
+static const char *mutevolcmd[] = { "volume", "-t", NULL };
+static const char *lockcmd[]  = { "lock", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -115,10 +116,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = shutdowncmd } },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = rebootcmd } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("$BROWSER") },
-	{ MODKEY,                       XK_Print,  spawn,          {.v = takescreenshot } },
-	{ 0,             XF86XK_AudioLowerVolume,  spawn,          {.v = downvol } },
-	{ 0,                    XF86XK_AudioMute,  spawn,          {.v = mutevol } },
-	{ 0,             XF86XK_AudioRaiseVolume,  spawn,          {.v = upvol } },
+	{ MODKEY,                       XK_Print,  spawn,          {.v = takescreenshotcmd } },
+	{ 0,             XF86XK_AudioLowerVolume,  spawn,          {.v = downvolcmd } },
+	{ 0,                    XF86XK_AudioMute,  spawn,          {.v = mutevolcmd } },
+	{ 0,             XF86XK_AudioRaiseVolume,  spawn,          {.v = upvolcmd } },
+	{ 0,                  XF86XK_ScreenSaver,  spawn,          {.v = lockcmd } },
 };
 
 /* button definitions */
